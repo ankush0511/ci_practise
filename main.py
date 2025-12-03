@@ -24,7 +24,7 @@ def main():
         app.run()
     except Exception as e:
         logger.error(f"Application startup failed: {str(e)}", exc_info=True)
-        st.error("❌ Failed to start the application. Please check your configuration.")
+        st.error("❌Failed to start the application. Please check your configuration.")
         st.exception(e)
 
 if __name__ == "__main__":
