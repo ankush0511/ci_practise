@@ -25,7 +25,10 @@ jobs:
     - name: Create Streamlit secrets
       run: |
         mkdir -p ~/.streamlit
-        echo "\GOOGLE_API_KEY = \"${{ secrets.GOOGLE_API_KEY }}\" GROQ_API_KEY = \"${{ secrets.GROQ_API_KEY }}\"" > ~/.streamlit/secrets.toml
+        cat > ~/.streamlit/secrets.toml << EOF
+        GOOGLE_API_KEY = '${{ secrets.GOOGLE_API_KEY }}'
+        GROQ_API_KEY = '${{ secrets.GROQ_API_KEY }}'
+        EOF
 
     - name: Run main file
       run: |
